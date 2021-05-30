@@ -21,7 +21,8 @@ function Header({ media, openSideMenu, cartItems }) {
 	};
 
 	return (
-
+		<>
+		<div className="header-dummy"></div>			
 		<header className="header">
 			<div className="header__content">
 				<Logo />
@@ -49,6 +50,7 @@ function Header({ media, openSideMenu, cartItems }) {
 
 			</div>
 		</header>
+		</>
 	);
 }
 
