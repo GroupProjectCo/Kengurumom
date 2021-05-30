@@ -1,7 +1,5 @@
 .popup-basket {
   position: absolute;
-  /* width: min-content;
-  max-width: 323px; */
   width: 323px;
   top: 80px;
   right: -10px;
@@ -39,6 +37,12 @@
 
   .popup-basket::before {
     top: -13.5px;
+  }
+}
+
+@media screen and (max-width:500px) {
+  .popup-basket {
+    width: calc(100vw - 125px);
   }
 }
 
