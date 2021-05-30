@@ -59,3 +59,45 @@
   top: 30px;
   right: 30px;
 }
+
+@media screen and (max-width: 1024px) {
+  .popup-care__title {
+    font-size: 25px;
+    line-height: 30px;
+  }
+
+  .popup-care {
+    padding: 45px 137px 64px 137px;
+  }
+
+  .popup-care__text {
+    font-size: 16px;
+  }
+}
+
+@media screen and (max-width: 800px) {
+  .popup-care {
+    padding: 41px 52px 92px 52px;
+  }
+
+  .popup-care__text {
+    font-size: 14px;
+  }
+}
+
+@media screen and (max-width: 500px) {
+  .popup-care {
+    padding: 68px 25px 28px 41px;
+  }
+}
+
+@media screen and (max-width: 440px) {
+  .popup-care__title {
+    font-size: 20px;
+    line-height: 24px;
+  }
+
+  .popup-care {
+    padding: 62px 18px 37px 9px;
+  }
+}

@@ -1,7 +1,7 @@
 import React from 'react';
 import './PopupCare.css';
 import Dialog from '@material-ui/core/Dialog';
-import { ThemeProvider, createMuiTheme } from '@material-ui/core/styles';
+import { ThemeProvider, createMuiTheme, makeStyles } from '@material-ui/core/styles';
 import {popupCareIcons, popupClose} from './constants';
 
 //change main color
@@ -18,29 +18,53 @@ const theme = createMuiTheme({
         borderRadius: '20px',
       }
     },
-    MuiDialog: {
-      paperWidthSm: {
-        width: "100%",
-        maxWidth: "1167px",
-      },
-      paper: {
-        position: "absolute",
-        top: "177px",
-      },
-      paperScrollPaper: {
-        maxHeight: "calc(100% - 177px - 100px)",
-      }
-    }
-  }
+  },
 });
+
+const useStyles = makeStyles(theme => ({
+  paperWidthSm: {
+    width: "100%",
+    maxWidth: "1167px",
+  },
+  paper: {
+    margin: '0',
+    position: 'absolute',
+    top: '177px',
+    padding: '47px 115px 37px 85px',
+    backgroundColor: '#FAF1E9',
+    boxSizing: 'border-box',
+    scrollbarWidth: 'thin',
+    
+    [theme.breakpoints.down(1207)]: {
+      width: 'calc(100% - 2*20px);',
+      marginLeft: '20px',
+      marginRight: '20px',
+    },
+    [theme.breakpoints.down(1024)]: {
+      padding: '45px 137px 64px 137px',
+    },
+    [theme.breakpoints.down(800)]: {
+      padding: '41px 52px 92px 52px',
+    },
+    [theme.breakpoints.down(500)]: {
+      padding: '68px 25px 28px 41px',
+      position: 'relative',
+      top: 'unset',
+    },
+    [theme.breakpoints.down(400)]: {
+      padding: '62px 18px 37px 9px',
+    },
+  },
+}));
 
 export default function PopupCare({isOpened, onClose}){
   const handleClose = () => {onClose(false)};
+  const classes = useStyles(theme);
 
   return (
     <ThemeProvider theme={theme}>
       <Dialog
-        classes={{paper: 'popup-care'}}
+        classes={classes}
         onClose={handleClose}
         aria-labelledby="popup-care"
         open={isOpened || false}>
