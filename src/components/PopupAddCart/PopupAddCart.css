@@ -23,50 +23,16 @@
   display: flex;
   justify-content: space-between;
   padding: 0 0 44px 0;
-  margin: 50px 0 0 0;
-}
-
-/*
-.popup-add-cart__button_keep-shopping {
-  border: 1px solid #513629;
-  color: #513629;
-  font-size: 16px;
-  background-color: #FFF;
-  padding: 12px 32px 11px 33px;
-}
-
-.popup-add-cart__button_keep-shopping:hover {
-  border: 1px solid #DC8962;
-  background-color: #DC8962;
-  color: #fff;
-}
-
-.popup-add-cart__button_keep-shopping:active {
-  border: 1px solid #FCBA9B;
-  background-color: #FCBA9B;
-  color: #fff;
-}
-
-.popup-add-cart__button_go-to-basket {
-  border: 1px solid #CA764E;
-  color: #FAF1E9;
-  background-color: #DC8962;
-  padding: 11px 36px 12px 36px;
-  text-decoration: none;
-}
-
-.popup-add-cart__button_go-to-basket:hover {
-  background-color: #CA764E;
-}
-
-.popup-add-cart__button_go-to-basket:active {
-  background-color: #FCBA9B;
-}
- */
-.popup-add-cart__item {
   margin: 0;
+}
+
+.popup-add-cart__item {
+  margin: 0 0 30px 0;
   padding: 0;
-  display: flex;
+  display: grid;
+  gap: 20px 20px;
+  grid-template-columns: max-content max-content max-content;
+  grid-template-rows: none;
   align-items: center;
   justify-content: space-between;
 }
@@ -103,4 +69,53 @@
   padding: 0;
   display: flex;
   align-items: center;
+}
+
+@media screen and (max-width: 640px) {
+  .popup-add-cart {
+    width: calc(100% - 2*15px);
+  }
+}
+
+@media screen and (max-width: 700px) {
+  .popup-add-cart__item-title {
+    font-size: 16px;
+  }
+  
+  .popup-add-cart__item-num {
+    font-size: 16px;
+  }
+}
+
+@media screen and (max-width: 550px) {
+  .popup-add-cart__item-img {
+    padding: 0;
+  }
+
+  .popup-add-cart__item-img-title {
+    flex-direction: column;
+  }
+
+  .popup-add-cart__item-num {
+    text-align: center;
+  }
+  
+  .popup-add-cart__item-title {
+    text-align: center;
+  }
+
+  .popup-add-cart__item {
+    grid-template-columns: none;
+    grid-template-rows: max-content max-content max-content;
+    justify-content: center;
+  }
+
+  .popup-add-cart__action-buttons {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .popup-add-cart__action-buttons > a:nth-last-child() {
+    margin-top: 10px;
+  }
 }
