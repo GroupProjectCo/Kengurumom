@@ -6,6 +6,9 @@ import Breadcrumbs from '@material-ui/core/Breadcrumbs'
 import Typography from '@material-ui/core/Typography'
 import Link from '@material-ui/core/Link'
 import {useHistory, useLocation} from 'react-router-dom';
+import styled from 'styled-components';
+
+const Separator = styled.span`color: #DC8962`;
 
 function BreadCrumbs() {
   const {pathname} = useLocation();
@@ -24,7 +27,7 @@ function BreadCrumbs() {
   const classes = useStyles()
 
   return (
-      <Breadcrumbs className='bread' separator='>' aria-label="breadcrumb">
+      <Breadcrumbs className='bread' separator={<Separator>&gt;</Separator>} aria-label="breadcrumb">
         <Link className={classes.bread__crumb} onClick={() => history.push('/')}>Главная</Link>
         {pathNames.map((name, index) => {
           const pathBack = `/${pathNames.slice(0, index + 1).join("/")}`;
