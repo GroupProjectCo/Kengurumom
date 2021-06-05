@@ -13,7 +13,6 @@ function Basket({ cartItems, onDeleteCartItem }) {
   };
 
   const getTotalCartItems = () => {
-    console.log(cartItems)
     return cartItems.reduce((sum, e) => sum + e.num, 0);
   }
 

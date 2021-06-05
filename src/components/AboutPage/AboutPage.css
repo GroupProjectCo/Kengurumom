@@ -20,6 +20,7 @@
   margin: 100px 0 0 0;
   padding: 0;
   display: flex;
+  flex-direction: row;
   justify-content: space-between;
   align-items: center;
   font-size: 16px;
@@ -65,5 +66,35 @@
   .about-page__text {
     width: 52%;
     max-width: 453px;
+  }
+}
+
+@media screen and (max-width: 900px) {
+  .about-page__group {
+    flex-direction: column;
+  }
+
+  .about-page__group:nth-child(2n-1) {
+    flex-direction: column-reverse;
+  }
+
+  .about-page__group {
+    margin-top: 50px;
+  }
+
+  .about-page__img {
+    width: 100%;
+  }
+
+  .about-page__text {
+    width: 100%;
+    max-width: unset;
+  }
+}
+
+@media screen and (max-width: 400px) {
+  .about-page {
+    margin-left: 25px;
+    margin-right: 25px;
   }
 }
