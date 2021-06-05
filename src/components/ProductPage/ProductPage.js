@@ -8,8 +8,10 @@ function ProductPage({ products, media, onPopupCareOpen, onPopupAddCartOpen}) {
 
   const handlePopupAddCartOpen = () => {
     onPopupAddCartOpen({
+      id: product.id,
       src: product.photos[0],
       title: product.name,
+      num: 1,
       price: product.sale ? 
         Math.floor(product.price - (product.price * product.sale) / 100) : product.price
     });

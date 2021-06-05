@@ -25,8 +25,10 @@ export default function PopularItem({id, photos, name, price, sale = false, new:
 
   const handlePopupAddCartOpen = () => {
     onPopupAddCartOpen({
+      id: id,
       src: photos[0],
       title: name,
+      num: 1,
       price: sale ? Math.floor(price - (price * sale) / 100) : price
     });
   }

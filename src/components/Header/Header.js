@@ -5,7 +5,7 @@ import Logo from '../Logo/Logo';
 import Navigation from '../Navigation/Navigation';
 import './Header.css';
 
-function Header({ media, openSideMenu, cartItems }) {
+function Header({ media, openSideMenu, cartItems, onDeleteCartItem }) {
 
 	const [isCatMenuOpnd, setIsCatMenuOpnd] = useState(false);
 
@@ -37,13 +37,13 @@ function Header({ media, openSideMenu, cartItems }) {
 							isCatMenuOpnd={isCatMenuOpnd}
 						/>
 				}
-				<Basket cartItems={cartItems}/>
+				<Basket onDeleteCartItem={onDeleteCartItem} cartItems={cartItems}/>
 				{
 					media.isLaptop 
 						&& 	<button 
 								type="button" 
 								className="header__burger-button" 
-								onClick={openSideMenu} 
+								onClick={openSideMenu}
 							>
 							</button>
 				}

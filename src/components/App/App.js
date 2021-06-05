@@ -41,10 +41,23 @@ function App() {
   
   //open popup "Товар добавлен в корзину"
   const handlePopupAddCartOpen = (item) => {
-    setCartItems([...cartItems, item])
+    if (!cartItems.map(e => e.id).includes(item.id)) {
+      setCartItems([...cartItems, item])
+    } else {
+      setCartItems(cartItems.map(e => ({num: e.id === item.id ? e.num++ : e.num, ...e})));
+    }
     setPopupAddCartItem(item);
     setIsPopupAddCartOpened(true);
   };
+
+  const handlePopupDeleteCartItem = (item) => {
+    if (cartItems.filter(e => e.id === item.id)[0].num > 1) {
+      setCartItems(cartItems.map(e => ({num: e.id === item.id ? e.num-- : e.num, ...e})));
+    } else {
+      setCartItems(cartItems.filter(e => e.id !== item.id))
+    }
+  }
+
   const handlePopupAddCartClose = () => { setIsPopupAddCartOpened(false) };
 
   return (
@@ -56,7 +69,7 @@ function App() {
           onCloseClick={closeSideMenu}
         />
       )}
-      <Header media={media} openSideMenu={openSideMenu} cartItems={cartItems}/>
+      <Header media={media} openSideMenu={openSideMenu} cartItems={cartItems} onDeleteCartItem={handlePopupDeleteCartItem}/>
       <Content 
         media={media}
         onPopupCareOpen={handlePopupCareOpen}
