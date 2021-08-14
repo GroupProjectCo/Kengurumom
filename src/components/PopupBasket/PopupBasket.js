@@ -1,3 +1,8 @@
+/* eslint-disable no-restricted-syntax */
+/* eslint-disable max-len */
+/* eslint-disable no-return-assign */
+/* eslint-disable no-shadow */
+/* eslint-disable no-param-reassign */
 import { useState, useEffect } from 'react';
 import './PopupBasket.css';
 import { Link } from 'react-router-dom';

@@ -1,3 +1,4 @@
+/* eslint-disable no-nested-ternary */
 import { useState, useEffect } from 'react';
 import './Review.css';
 
@@ -22,7 +23,7 @@ export default function Review({ media }) {
     }
   };
 
-  const updateShowArrows = () => { 
+  const updateShowArrows = () => {
     if (width > 1200) setShowArrows(true);
     else setShowArrows(false);
   };

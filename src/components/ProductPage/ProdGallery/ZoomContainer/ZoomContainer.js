@@ -1,3 +1,4 @@
+/* eslint-disable react-hooks/exhaustive-deps */
 import './ZoomContainer.css';
 import { useState, useEffect } from 'react';
 import loopImg from '../../../../images/product/loop.svg';

@@ -1,3 +1,4 @@
+/* eslint-disable no-nested-ternary */
 import './CatalogPage.css';
 import {
   NavLink, Route, Switch, useRouteMatch,

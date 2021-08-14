@@ -1,3 +1,4 @@
+/* eslint-disable camelcase */
 import review_popovadaria from '../../images/review_popovadaria.png';
 import review_kateiva from '../../images/review_kateiva.png';
 import review_dsai_love from '../../images/review_dsai_love.png';

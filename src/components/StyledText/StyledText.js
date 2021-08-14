@@ -1,3 +1,4 @@
+/* eslint-disable no-shadow */
 import React from 'react';
 import styled from 'styled-components';
 
@@ -36,7 +37,8 @@ export default function StyledText({ text, styles }) {
     return output;
   };
 
-  // create array of groups of words and objects (without this we`ll have every word at single line in our html code! not good)
+  // create array of groups of words and objects
+  // (without this we`ll have every word at single line in our html code! not good)
   const words = text.split(/(<\w+?>.+?<\/\w+?>)/).map(createWordComponent);
 
   return <StyledParagraph style={style} className={className}>{words}</StyledParagraph>;

@@ -1,3 +1,4 @@
+/* eslint-disable no-return-assign */
 import { useState, useEffect } from 'react';
 import { useMediaQuery } from 'react-responsive';
 import './App.css';
