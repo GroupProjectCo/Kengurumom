@@ -10,6 +10,7 @@ export default function PopularItem(product) {
   const { id, photos, name, price, sale = false, new: isNew = false, component } = product;
   const history = useHistory();
   const dispatch = useDispatch();
+  console.log(`${CATALOGUE_PAGE}/${id}`);
 
   const handleClick = () => {
     history.push(`${CATALOGUE_PAGE}/${id}`);

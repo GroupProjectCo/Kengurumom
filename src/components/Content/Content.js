@@ -35,7 +35,7 @@ function Content(props) {
 
   return (
     <main className='content'>
-      {pathname !== MAIN_PAGE && <BreadCrumbs />}
+      {pathname.includes(`${CATALOGUE_PAGE}/`) && <BreadCrumbs />}
       <Switch>
         <Route exact path={MAIN_PAGE}>
           <MainPage media={media} />

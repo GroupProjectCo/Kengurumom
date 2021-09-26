@@ -7,15 +7,15 @@ import Instagram from '../Instagram/Instagram';
 import { exampleArrProducts } from '../../config/test-db';
 
 function MainPage(props) {
-  const { media, onPopupAddCartOpen } = props;
+  const { media } = props;
   return (
     <>
-      <Slider media={media}/>
-      <Popular media={media} products={exampleArrProducts} onPopupAddCartOpen={onPopupAddCartOpen}/>
-      <Advantages/>
-      <SectionsWithBtn/>
-      <Review media={media}/>
-      <Instagram/>
+      <Slider media={media} />
+      <Popular media={media} products={exampleArrProducts} />
+      <Advantages />
+      <SectionsWithBtn />
+      <Review media={media} />
+      <Instagram />
     </>
   );
 }
