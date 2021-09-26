@@ -4,7 +4,7 @@ import { connect, useDispatch } from 'react-redux';
 import { BASKET_PAGE } from '../../config/links';
 import Button from '../Button/Button';
 import deleteIcon from '../../images/cart_delete_icon.svg';
-import { removeProduct } from '../../redux/actions';
+import { removeProduct } from '../../redux/GoodsInBasket/actions';
 
 const PopupBasket = ({ isOpened, onClose, goods, goodsTotalSum }) => {
   const visibilityClass = isOpened ? 'popup-basket_visible' : '';

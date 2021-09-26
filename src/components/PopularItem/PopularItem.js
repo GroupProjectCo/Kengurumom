@@ -2,7 +2,7 @@ import './PopularItem.css';
 import { Link, useHistory } from 'react-router-dom';
 import { useDispatch } from 'react-redux';
 import { CATALOGUE_PAGE } from '../../config/links';
-import { addProduct } from '../../redux/actions';
+import { addProduct } from '../../redux/GoodsInBasket/actions';
 
 // 'new' prop is reserved, rename to isNew
 export default function PopularItem(product) {

@@ -1,7 +1,7 @@
 import { useSelector, useDispatch } from 'react-redux';
 import './BasketPage.css';
 import BasketTableProduct from '../BasketTableProduct/BasketTableProduct';
-import { clearBasket } from '../../redux/actions';
+import { clearBasket } from '../../redux/GoodsInBasket/actions';
 import BasketForm from '../BasketForm/BasketForm';
 
 function BasketPage() {

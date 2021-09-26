@@ -1,6 +1,6 @@
 import './BasketTableProduct.css';
 import { useDispatch } from 'react-redux';
-import { removeProduct, increaseProduct, reduceProduct } from '../../redux/actions';
+import { removeProduct, increaseProduct, reduceProduct } from '../../redux/GoodsInBasket/actions';
 import deleteIcon from '../../images/cart_delete_icon.svg';
 import plusIcon from '../../images/plus.svg';
 import minusIcon from '../../images/minus.svg';

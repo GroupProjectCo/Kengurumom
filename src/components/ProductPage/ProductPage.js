@@ -3,7 +3,7 @@ import { useParams } from 'react-router-dom';
 import { useDispatch } from 'react-redux';
 import ProdGallery from './ProdGallery/ProdGallery';
 import CustomSelect from '../CustomSelect/CustomSelect';
-import { addProduct } from '../../redux/actions';
+import { addProduct } from '../../redux/GoodsInBasket/actions';
 
 function ProductPage({ products, media, onPopupCareOpen, onPopupAddCartOpen }) {
   const { id } = useParams();
@@ -44,10 +44,10 @@ function ProductPage({ products, media, onPopupCareOpen, onPopupAddCartOpen }) {
           {/* <CustomSelect options={product.sizes} startValue='Выбрать...' /> */}
           <CustomSelect
             page='product'
-            options={product.sizes.map((size => ({
+            options={product.sizes.map(size => ({
               value: size.value || '',
               label: size.label || '',
-            })))}
+            }))}
             // startValue='Сортировать:'
             startValue={'min'}
             // cb={handleOrderDirection}
