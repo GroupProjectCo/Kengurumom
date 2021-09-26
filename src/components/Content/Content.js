@@ -16,7 +16,6 @@ import MainPage from '../MainPage/MainPage';
 import AboutPage from '../AboutPage/AboutPage';
 import DocumentPage from '../DocumentPage/DocumentPage';
 import DeliveryPage from '../DeliveryPage/DeliveryPage';
-import Button from '../Button/Button';
 import NotFoundPage from '../NotFoundPage/NotFoundPage';
 import CatalogPage from '../CatalogPage/CatalogPage';
 import ProductPage from '../ProductPage/ProductPage';
@@ -27,7 +26,7 @@ import OrderSuccessPage from '../OrderSuccessPage/OrderSuccessPage';
 import BasketPage from '../BasketPage/BasketPage';
 
 function Content(props) {
-  const { media, onPopupCareOpen, onPopupAddCartOpen } = props;
+  const { media, onPopupCareOpen } = props;
 
   const { pathname } = useLocation();
   useEffect(() => {
@@ -39,7 +38,7 @@ function Content(props) {
       {pathname !== MAIN_PAGE && <BreadCrumbs />}
       <Switch>
         <Route exact path={MAIN_PAGE}>
-          <MainPage media={media} onPopupAddCartOpen={onPopupAddCartOpen} />
+          <MainPage media={media} />
         </Route>
 
         <Route path={ABOUT_PAGE}>
@@ -67,11 +66,7 @@ function Content(props) {
         </Route>
 
         <Route exact path={CATALOGUE_PAGE}>
-          <CatalogPage
-            media={media}
-            products={exampleArrProducts}
-            onPopupAddCartOpen={onPopupAddCartOpen}
-          />
+          <CatalogPage media={media} products={exampleArrProducts} />
         </Route>
 
         <Route exact path={`${CATALOGUE_PAGE}/:id`}>
@@ -79,27 +74,11 @@ function Content(props) {
             products={exampleArrProducts}
             media={media}
             onPopupCareOpen={onPopupCareOpen}
-            onPopupAddCartOpen={onPopupAddCartOpen}
           />
         </Route>
 
         <Route exact path={`${ORDER_SUCCESS_PAGE}/:id`}>
           <OrderSuccessPage />
-        </Route>
-
-        {/* use for test !!! */}
-        <Route path='/test_popup/'>
-          <div
-            style={{
-              width: '100wh',
-              height: 'calc(100vh - 1111px);',
-              display: 'flex',
-              justifyContent: 'center',
-              alignItems: 'center',
-            }}
-          >
-            <Button text='CLICK ME!' btnStyle='' onClick={onPopupAddCartOpen} />
-          </div>
         </Route>
 
         <Route path='*'>

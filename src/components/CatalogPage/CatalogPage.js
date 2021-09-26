@@ -6,7 +6,7 @@ import SlickSlider from '../SharedComponents/Slider/SlickSlider';
 import ProductsList from '../ProductsList/ProductsList';
 import CustomSelect from '../CustomSelect/CustomSelect';
 
-function CatalogPage({ products, onPopupAddCartOpen, media }) {
+function CatalogPage({ products, media }) {
   const [category, setCategory] = useState(localStorage.getItem('category') || '');
   const [filteredList, setFilteredList] = useState([]);
   const [order, setOrder] = useState('asc');
@@ -17,7 +17,7 @@ function CatalogPage({ products, onPopupAddCartOpen, media }) {
   const [showArrows, setShowArrows] = useState(!!media.isDesktop);
 
   useEffect(() => {
-    const orderFunction = (a, b) => order === 'asc' ? a.price - b.price : b.price - a.price;
+    const orderFunction = (a, b) => (order === 'asc' ? a.price - b.price : b.price - a.price);
 
     setFilteredList(
       category
@@ -27,7 +27,7 @@ function CatalogPage({ products, onPopupAddCartOpen, media }) {
   }, []);
 
   useEffect(() => {
-    const orderFunction = (a, b) => order === 'asc' ? a.price - b.price : b.price - a.price;
+    const orderFunction = (a, b) => (order === 'asc' ? a.price - b.price : b.price - a.price);
 
     setFilteredList(
       category
@@ -71,7 +71,7 @@ function CatalogPage({ products, onPopupAddCartOpen, media }) {
     localStorage.setItem('category', '');
   }
 
-  const handleOrderDirection = (orderDirection) => {
+  const handleOrderDirection = orderDirection => {
     setOrder(orderDirection);
   };
 
@@ -88,7 +88,8 @@ function CatalogPage({ products, onPopupAddCartOpen, media }) {
           {catalogCategories.map((categoryTitle, i) => (
             <button
               key={i}
-              className={`catalog__category ${categoryTitle === category && 'catalog__category_active'
+              className={`catalog__category ${
+                categoryTitle === category && 'catalog__category_active'
               }`}
               onClick={() => setCategory(categoryTitle)}
             >
@@ -128,7 +129,7 @@ function CatalogPage({ products, onPopupAddCartOpen, media }) {
             Сбросить фильтр
           </button>
         </div>
-        <ProductsList list={filteredList} onPopupAddCartOpen={onPopupAddCartOpen} media={media}/>
+        <ProductsList list={filteredList} media={media} />
         {/* {filteredList.length > 8
         && (<button onClick={handleClickMore}
             className='button catalog__pagination'>Показать ещё</button>

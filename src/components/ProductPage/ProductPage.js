@@ -4,23 +4,16 @@ import { useDispatch } from 'react-redux';
 import ProdGallery from './ProdGallery/ProdGallery';
 import CustomSelect from '../CustomSelect/CustomSelect';
 import { addProduct } from '../../redux/GoodsInBasket/actions';
+import { openPopupAddInBasket } from '../../redux/PopupAddInBasket/actions';
 
-function ProductPage({ products, media, onPopupCareOpen, onPopupAddCartOpen }) {
+function ProductPage({ products, media, onPopupCareOpen }) {
   const { id } = useParams();
   const product = products.find(productData => productData.id === id);
   const dispatch = useDispatch();
 
-  const handlePopupAddCartOpen = () => {
+  const addProductHandler = () => {
     dispatch(addProduct(product));
-    onPopupAddCartOpen({
-      id: product.id,
-      src: product.photos[0],
-      title: product.name,
-      num: 1,
-      price: product.sale
-        ? Math.floor(product.price - (product.price * product.sale) / 100)
-        : product.price,
-    });
+    dispatch(openPopupAddInBasket(product));
   };
 
   return (
@@ -53,7 +46,7 @@ function ProductPage({ products, media, onPopupCareOpen, onPopupAddCartOpen }) {
             // cb={handleOrderDirection}
           />
         </div>
-        <button className='button button_type_add-to-card' onClick={handlePopupAddCartOpen}>
+        <button className='button button_type_add-to-card' onClick={addProductHandler}>
           В корзину
         </button>
         <div className='product__specification-box'>

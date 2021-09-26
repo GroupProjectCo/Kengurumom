@@ -2,9 +2,7 @@ import { useState } from 'react';
 import './ProductList.css';
 import PopularItem from '../PopularItem/PopularItem';
 
-import {
-  NODATA,
-} from '../../config/texts';
+import { NODATA } from '../../config/texts';
 import {
   DESKTOP_ADDING_AMOUNT,
   DESKTOP_CARDS_AMOUNT,
@@ -14,7 +12,7 @@ import {
   MOBILE_ADDING_AMOUNT,
 } from '../../config/constants';
 
-function ProductsList({ list, onPopupAddCartOpen, media }) {
+function ProductsList({ list, media }) {
   // resize
   function addedCount() {
     if (media.isMobileVert) {
@@ -50,38 +48,35 @@ function ProductsList({ list, onPopupAddCartOpen, media }) {
       if (resizeTimer) clearTimeout(resizeTimer);
       resizeTimer = setTimeout(resize, 1500);
     }
+
     return setResizeTimer;
   }
 
   window.addEventListener('resize', resetResizeTimer());
+
   // ===============================================================
   function handleClickMore() {
     const itemsSum = itemsCount;
     setItemsCount(itemsSum + itemsCountAdded);
   }
-  return (<>
-    <div className='products-list'>
-      {list.length === 0
-        ? (<span className="products-list__no-data-text">{NODATA}</span>)
-        : (list
-          .filter((product, index) => index < itemsCount)
-          .map(product => (
-            <PopularItem
-              {...product}
-              key={product.id}
-              component={'catalog'}
-              onPopupAddCartOpen={onPopupAddCartOpen}
-            />
-          ))
-        )
-      }
-    </div>
-    {list.length > itemsCount
-      && (<button onClick={handleClickMore}
-        className='button products-list__pagination'>Показать ещё</button>
 
+  return (
+    <>
+      <div className='products-list'>
+        {list.length === 0 ? (
+          <span className='products-list__no-data-text'>{NODATA}</span>
+        ) : (
+          list
+            .filter((product, index) => index < itemsCount)
+            .map(product => <PopularItem {...product} key={product.id} component={'catalog'} />)
+        )}
+      </div>
+      {list.length > itemsCount && (
+        <button onClick={handleClickMore} className='button products-list__pagination'>
+          Показать ещё
+        </button>
       )}
-  </>
+    </>
   );
 }
 

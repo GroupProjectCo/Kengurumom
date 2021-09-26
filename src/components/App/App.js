@@ -6,13 +6,10 @@ import Header from '../Header/Header';
 import SideMenu from '../SideMenu/SideMenu';
 import Content from '../Content/Content';
 import PopupCare from '../PopupCare/PopupCare';
-import PopupAddCart from '../PopupAddCart/PopupAddCart';
+import PopupAddProduct from '../PopupAddProduct/PopupAddProduct';
 import Footer from '../Footer/Footer';
 
 function App() {
-  const [cartItems, setCartItems] = useState([]);
-  const [popupAddCartItem, setPopupAddCartItem] = useState(null);
-  const [isPopupAddCartOpened, setIsPopupAddCartOpened] = useState(false);
   const [isPopupCareOpened, setIsPopupCareOpened] = useState(false);
 
   const isDesktop = useMediaQuery({ minWidth: 1440 });
@@ -44,34 +41,10 @@ function App() {
     setIsPopupCareOpened(false);
   };
 
-  // open popup "Товар добавлен в корзину"
-  const handlePopupAddCartOpen = item => {
-    if (!cartItems.map(e => e.id).includes(item.id)) {
-      setCartItems([...cartItems, item]);
-    } else {
-      // eslint-disable-next-line no-return-assign
-      setCartItems(cartItems.map(e => ({ num: e.id === item.id ? (e.num += 1) : e.num, ...e })));
-    }
-    setPopupAddCartItem(item);
-    setIsPopupAddCartOpened(true);
-  };
-
-  // const handlePopupDeleteCartItem = item => {
-  //   if (cartItems.filter(e => e.id === item.id)[0].num > 1) {
-  //     setCartItems(cartItems.map(e => ({ num: e.id === item.id ? (e.num -= 1) : e.num, ...e })));
-  //   } else {
-  //     setCartItems(cartItems.filter(e => e.id !== item.id));
-  //   }
-  // };
-
   const { pathname } = useLocation();
   useEffect(() => {
     closeSideMenu();
   }, [pathname]);
-
-  const handlePopupAddCartClose = () => {
-    setIsPopupAddCartOpened(false);
-  };
 
   return (
     <>
@@ -79,19 +52,10 @@ function App() {
         <SideMenu media={media} isOpened={isSideMenuOpened} onCloseClick={closeSideMenu} />
       )}
       <Header media={media} openSideMenu={openSideMenu} />
-      <Content
-        media={media}
-        onPopupCareOpen={handlePopupCareOpen}
-        onPopupAddCartOpen={handlePopupAddCartOpen}
-        closeSideMenu={closeSideMenu}
-      />
+      <Content media={media} onPopupCareOpen={handlePopupCareOpen} closeSideMenu={closeSideMenu} />
       <Footer media={media} />
       <PopupCare isOpened={isPopupCareOpened} onClose={handlePopupCareClose} />
-      <PopupAddCart
-        isOpened={isPopupAddCartOpened}
-        inputItem={popupAddCartItem}
-        onClose={handlePopupAddCartClose}
-      />
+      <PopupAddProduct />
     </>
   );
 }
