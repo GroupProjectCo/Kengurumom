@@ -25,7 +25,7 @@
     grid-template-columns: repeat(2, max-content);
     grid-auto-rows: auto;
     column-gap: 25px;
-    transition: all .5s ease-in-out;
+    transition: all .05s ease-in-out;
 }
 
 .catalogue-menu__container_visible {

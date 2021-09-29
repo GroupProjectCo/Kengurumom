@@ -1,5 +1,5 @@
 import { Link, useParams } from 'react-router-dom';
-import { MAIN_PAGE } from '../../config/links';
+import { CATALOGUE_PAGE } from '../../config/links';
 import Button from '../Button/Button';
 import './OrderSuccessPage.css';
 
@@ -22,7 +22,7 @@ export default function OrderSuccessPage() {
           Ссылка на оплату будет доступна после подтверждения заказа.
         </p>
 
-        <Link to={MAIN_PAGE}>
+        <Link to={CATALOGUE_PAGE}>
           <Button text="Продолжить покупки" type="button" btnStyle="button_type_not-found"/>
         </Link>
       </div>
