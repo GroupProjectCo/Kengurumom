@@ -192,6 +192,7 @@
   margin: 0 auto;
   padding: 0 0 21px;
   width: 100%;
+  max-width: 280px;
   border-radius: 10px;
   transition: box-shadow .26s ease-in-out;
 }
