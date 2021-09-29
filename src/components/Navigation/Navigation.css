@@ -22,7 +22,7 @@
   color: #513629;
   text-decoration: none;
   margin: 0 50px 0 0;
-  padding: 0;
+  padding: 5px 0;
   cursor: pointer;
   transition: all 0.26s ease-in-out;
   white-space: nowrap;
@@ -35,6 +35,8 @@
 .navigation_type_side > .navigation__link {
   color: #fff;
   transition: color 0.26s ease-in-out;
+  margin-bottom: 28px;
+  margin-right: 0;
 }
 
 .navigation_type_side > .navigation__link:hover {
@@ -95,8 +97,6 @@ a.navigation__link_underlined {
   .navigation_type_side > .navigation__link {
     font-size: 20px;
     line-height: 24px;
-    margin-bottom: 38px;
-    margin-right: 0;
   }
 }
 
