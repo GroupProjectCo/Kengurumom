@@ -75,13 +75,18 @@
   .about-page__group {
     margin-top: 50px;
   }
-  
+
   .about-page__group_type_img-right {
     grid-template-columns: 1fr;
   }
 
   .about-page__group_type_img-left {
     grid-template-columns: 1fr;
+  }
+  .about-page__text,
+  .about-page__img {
+    max-width: unset;
+    max-height: unset;
   }
 }
 
