@@ -1,7 +1,9 @@
 .contacts{
     max-width: 970px;
     padding-bottom: 88px;
+    padding-top: 77px;
 }
+
 
 .contacts_centered{
     margin: auto;
@@ -115,3 +117,9 @@
     }
 }
 
+
+@media screen and (max-width: 480px){
+  .contacts {
+    padding-top: 54px;
+  }
+}

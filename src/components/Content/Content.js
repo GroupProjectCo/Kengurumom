@@ -11,6 +11,7 @@ import {
   TERMS_OF_USE_PAGE,
   ORDER_SUCCESS_PAGE,
   BASKET_PAGE,
+  PERSONAL_SEWING_PAGE,
 } from '../../config/links';
 import MainPage from '../MainPage/MainPage';
 import AboutPage from '../AboutPage/AboutPage';
@@ -24,6 +25,7 @@ import BreadCrumbs from '../BreadCrumbs/BreadCrumbs';
 import ContactsPage from '../ContactsPage/ContactsPage';
 import OrderSuccessPage from '../OrderSuccessPage/OrderSuccessPage';
 import BasketPage from '../BasketPage/BasketPage';
+import PersonalSewing from '../PersonalSewing/PersonalSewing';
 
 function Content(props) {
   const { media, onPopupCareOpen } = props;
@@ -39,6 +41,10 @@ function Content(props) {
       <Switch>
         <Route exact path={MAIN_PAGE}>
           <MainPage media={media} />
+        </Route>
+
+        <Route path={PERSONAL_SEWING_PAGE}>
+          <PersonalSewing />
         </Route>
 
         <Route path={ABOUT_PAGE}>
