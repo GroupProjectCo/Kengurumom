@@ -2,8 +2,10 @@
 @import url('./vendor/fonts/fonts.css');
 @import url('./blocks/page/page.css');
 
-body {
-  margin: 0;
+.page {
+  min-width: 320px;
+  width: 100%;
+  margin: 0 auto;
   font-family: 'Montserrat Alternates', Arial, sans-serif;
   color: #dc8962;
   /*сглаживание шрифтов и тд*/
@@ -11,10 +13,11 @@ body {
   -moz-osx-font-smoothing: grayscale;
   -webkit-text-size-adjust: 100%;
   -ms-text-size-adjust: 100%;
-  -moz-text-size-adjust: 100%; 
+  -moz-text-size-adjust: 100%;
 }
 
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+

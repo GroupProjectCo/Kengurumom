@@ -1,6 +1,6 @@
 .review {
   margin: 0 auto;
-  padding: 210px 21px 210px 21px;
+  padding: 80px 21px 234px 21px;
   width: 100%;
   max-width: 1257px;
   box-sizing: border-box;
@@ -33,7 +33,7 @@
 
 /*title*/
 .review__title {
-  margin: 0 auto 85px auto;
+  margin: 50px auto 85px auto;
   color: #dc8962;
   text-align: center;
   font-weight: 600;

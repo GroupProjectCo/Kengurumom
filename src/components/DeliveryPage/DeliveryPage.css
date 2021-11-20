@@ -4,6 +4,7 @@
     margin: auto;
     box-sizing: border-box;
     padding-bottom: 89px;
+    padding-top: 77px;
 }
 
 .delivery__title {
@@ -200,7 +201,7 @@
 
 @media screen and (max-width: 480px) {
     .delivery {
-        padding: 0 0 77px 0;
+        padding: 54px 0 77px 0;
     }
 
     .delivery__world-title {

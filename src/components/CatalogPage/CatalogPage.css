@@ -1,6 +1,6 @@
 .catalog {
   margin: 0;
-  padding: 0 0 120px;
+  padding: 77px 0 120px;
 }
 
 .catalog__title {
@@ -106,4 +106,8 @@
     align-self: center;
     align-items: center;
   }
+  .catalog {
+    padding-top: 54px;
+  }
+
 }

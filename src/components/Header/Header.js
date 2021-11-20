@@ -1,7 +1,7 @@
 /* eslint-disable no-underscore-dangle */
 import { useState } from 'react';
 import Basket from '../Basket/Basket';
-import CatalogueMenu from '../CatalogueMenu/CatalogueMenu';
+// import CatalogueMenu from '../CatalogueMenu/CatalogueMenu';
 import Logo from '../Logo/Logo';
 import Navigation from '../Navigation/Navigation';
 import useScrollPosition from './useScrollPosition';
@@ -9,15 +9,15 @@ import './Header.css';
 
 function Header({ media, openSideMenu }) {
   const [isVisible, setIsBeVisible] = useState(false);
-  const [isCatMenuOpnd, setIsCatMenuOpnd] = useState(false);
+  // const [isCatMenuOpnd, setIsCatMenuOpnd] = useState(false);
 
   const hideCatalogue = () => {
-    setIsCatMenuOpnd(false);
+    // setIsCatMenuOpnd(false);
     document.removeEventListener('click', hideCatalogue);
   };
 
   const showCatalogue = () => {
-    setIsCatMenuOpnd(true);
+    // setIsCatMenuOpnd(true);
     document.addEventListener('click', hideCatalogue);
   };
 
@@ -41,7 +41,7 @@ function Header({ media, openSideMenu }) {
             openCatalogueMenu={showCatalogue}
             closeCatalogueMenu={hideCatalogue}
           />
-          {media.isDesktop && <CatalogueMenu isCatMenuOpnd={isCatMenuOpnd} />}
+          {/* {media.isDesktop && <CatalogueMenu isCatMenuOpnd={isCatMenuOpnd} />} */}
           <Basket />
           {media.isLaptop && (
             <button type='button' className='header__burger-button' onClick={openSideMenu} />
