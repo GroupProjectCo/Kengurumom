@@ -55,6 +55,7 @@
 
 .catalog__category_active {
   color: #ca764e;
+  background-color: transparent;
 }
 
 .catalog__wrapper {

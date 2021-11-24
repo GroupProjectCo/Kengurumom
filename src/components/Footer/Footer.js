@@ -24,24 +24,24 @@ function Footer({ media }) {
             <p className="footer__text">пн - пт 09:00 - 21:00 по МСК</p>
           </div>
           <ul className="footer__social">
-            <li className="footer__social-item">
+            {/* <li className="footer__social-item">
               <a
                 className="footer__social-link footer__social-link_icon_whatsapp"
-                href="#"
+                href="#" target='_blank' rel='noreferrer'
               ></a>
-            </li>
+            </li> */}
             <li className="footer__social-item">
               <a
                 className="footer__social-link footer__social-link_icon_instagram"
-                href="#"
+                href="https://www.instagram.com/kenguru.mom/" target='_blank' rel='noreferrer'
               ></a>
             </li>
-            <li className="footer__social-item">
+            {/* <li className="footer__social-item">
               <a
                 className="footer__social-link footer__social-link_icon_telegram"
-                href="#"
+                href="#" target='_blank' rel='noreferrer'
               ></a>
-            </li>
+            </li> */}
           </ul>
         </div>
         <div className="footer__wrapper">
