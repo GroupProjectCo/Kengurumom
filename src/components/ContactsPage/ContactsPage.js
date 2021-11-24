@@ -17,7 +17,7 @@ function ContactsPage() {
           </li>
           <li className='contacts__item'>
             <h3 className='contacts__item-title'>Instagram</h3>
-            <a href='https' target='_blank' className='contacts__link'>
+            <a href='https://www.instagram.com/kenguru.mom/' target='_blank' rel='noreferrer' className='contacts__link'>
               kenguru.mom
             </a>
           </li>
@@ -39,7 +39,7 @@ function ContactsPage() {
               required
             />
           </fieldset>
-          <Button type='submit' text='Отправить' btnStyle='button_type_contacts' />
+          <Button disabled={true} type='submit' text='Отправить' btnStyle='button_type_contacts' />
           <TermsCheckbox />
         </form>
       </div>

@@ -11,11 +11,8 @@ function BasketTableProduct({ product }) {
   return (
     <div className='basket_page__product'>
       <img src={product.photo} alt={product.name} className='basket_page__product-img' />
-
       <h3 className='basket_page__product-title'>{product.name}</h3>
-
       <p className='basket_page__product-article'>Артикул {product.vendorCode}</p>
-
       <div className='basket_page__product-counter'>
         <button
           className='basket_page__product-counter-btn'

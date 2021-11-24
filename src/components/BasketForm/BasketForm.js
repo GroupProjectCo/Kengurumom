@@ -66,7 +66,7 @@ function BasketForm() {
         </div>
       </fieldset>
       <TermsCheckbox />
-      <Button type='submit' text='Оформить заказ' btnStyle='button_type_order' />
+      <Button disabled={true} type='submit' text='Оформить заказ' btnStyle='button_type_order' />
     </form>
   );
 }

@@ -49,6 +49,12 @@
   background-color: #fcba9b;
 }
 
+.button:disabled {
+  background-color: #faf1e9;
+  color: #fff;
+  cursor: default;
+}
+
 .button_type_add-to-card {
   margin-bottom: 40px;
 }

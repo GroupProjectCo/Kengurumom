@@ -25,7 +25,7 @@ function BasketPage() {
         <>
           <div className='basket-page__table'>
             {goods.map(product => (
-              <BasketTableProduct product={product} />
+              <BasketTableProduct key={product.id} product={product} />
             ))}
           </div>
           <p className='basket-page__total'>Сумма: {goodsTotalSum} ₽</p>
