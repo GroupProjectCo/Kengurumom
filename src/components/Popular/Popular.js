@@ -3,7 +3,7 @@
 import { useState, useEffect } from 'react';
 import './Popular.css';
 
-import PopularItem from '../PopularItem/PopularItem';
+import ProductItem from '../ProductItem/ProductItem';
 import SlickSlider from '../SharedComponents/Slider/SlickSlider';
 
 export default function Popular({ media, products }) {
@@ -52,7 +52,7 @@ export default function Popular({ media, products }) {
         arrowType='popular'
       >
         {products.slice(0, 6).map(item => (
-          <PopularItem {...item} key={item.id} component={'popular'} />
+          <ProductItem {...item} key={item.id} component={'popular'} />
         ))}
       </SlickSlider>
     </section>

@@ -6,6 +6,7 @@ import { connect, useDispatch } from 'react-redux';
 import { BASKET_PAGE } from '../../config/links';
 import Button from '../Button/Button';
 import { closePopupAddInBasket } from '../../redux/PopupAddInBasket/actions';
+import { BASE_URL } from '../../config/constants';
 
 // change main color
 const theme = createMuiTheme({
@@ -37,15 +38,15 @@ function PopupAddProduct({ isOpened, product }) {
         <div className='popup-add-cart__item'>
           <div className='popup-add-cart__item-img-title'>
             <img
-              src={product?.photos[0]}
+              src={`${BASE_URL}${product?.photos[0]?.url}`}
               title={product?.name}
               alt={product?.name}
               className='popup-add-cart__item-img'
             />
             <p className='popup-add-cart__item-title'>{product?.name}</p>
+            <p className='popup-add-cart__item-num'>1 шт</p>
+            <p className='popup-add-cart__item-title'>{product?.price} &#8381;</p>
           </div>
-          <p className='popup-add-cart__item-num'>1 шт</p>
-          <p className='popup-add-cart__item-title'>{product?.price} &#8381;</p>
         </div>
         <div className='popup-add-cart__action-buttons'>
           <Button

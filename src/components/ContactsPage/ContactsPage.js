@@ -1,7 +1,7 @@
 import './ContactsPage.css';
 import Button from '../Button/Button';
 import TermsCheckbox from '../TermsCheckbox/TermsCheckbox';
-import { TEL, PHONE_TEXT } from '../../config/texts';
+import { TEL, PHONE_TEXT, TEL_WA, TEL_TG } from '../../config/texts';
 
 function ContactsPage() {
   return (
@@ -13,6 +13,16 @@ function ContactsPage() {
             <h3 className='contacts__item-title'>Телефон</h3>
             <a href={`tel:${TEL}`} className='contacts__link'>
               {PHONE_TEXT}
+            </a>
+          </li>
+          <li className='contacts__item'>
+            <a href={`https://wa.me/${TEL_WA}`} target='_blank' rel='noreferrer' className='contacts__link'>
+              Написать нам в WhatsApp
+            </a>
+          </li>
+          <li className='contacts__item'>
+            <a href={`https://telegram.me/${TEL_TG}`} target='_blank' rel='noreferrer' className='contacts__link'>
+              Написать нам в Telegram
             </a>
           </li>
           <li className='contacts__item'>

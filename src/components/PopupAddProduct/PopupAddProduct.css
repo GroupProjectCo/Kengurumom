@@ -61,7 +61,7 @@
   color: #513629;
   font-size: 18px;
   line-height: 116.4%;
-  font-weight: normal; 
+  font-weight: normal;
 }
 
 .popup-add-cart__item-img-title {
@@ -69,6 +69,7 @@
   padding: 0;
   display: flex;
   align-items: center;
+  justify-content: space-between;
 }
 
 @media screen and (max-width: 640px) {
@@ -81,7 +82,7 @@
   .popup-add-cart__item-title {
     font-size: 16px;
   }
-  
+
   .popup-add-cart__item-num {
     font-size: 16px;
   }
@@ -99,7 +100,7 @@
   .popup-add-cart__item-num {
     text-align: center;
   }
-  
+
   .popup-add-cart__item-title {
     text-align: center;
   }

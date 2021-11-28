@@ -15,7 +15,7 @@ function ProdGallery({ photos, media }) {
       <ZoomContainer slides={photos} currentThumb={currentImageIndex} media={media} />
       <ul className="thumbnails">
         {photos.map((image, i) => (
-          <ThumbnailImage src={image} key={i} getImage={getImage} index={i} />
+          <ThumbnailImage src={image.url} key={i} getImage={getImage} index={i} />
         ))}
       </ul>
     </section>

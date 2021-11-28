@@ -4,14 +4,14 @@ import Advantages from '../Advantages/Advantages';
 import SectionsWithBtn from '../SectionsWithBtn/SectionsWithBtn';
 import Review from '../Review/Review';
 import Instagram from '../Instagram/Instagram';
-import { exampleArrProducts } from '../../config/test-db';
+// import { exampleArrProducts } from '../../config/test-db';
 
 function MainPage(props) {
-  const { media } = props;
+  const { media, products } = props;
   return (
     <>
       <Slider media={media} />
-      <Popular media={media} products={exampleArrProducts} />
+      <Popular media={media} products={products} />
       <Advantages />
       <SectionsWithBtn />
       <Review media={media} />

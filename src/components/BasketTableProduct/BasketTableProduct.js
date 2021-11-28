@@ -4,15 +4,16 @@ import { removeProduct, increaseProduct, reduceProduct } from '../../redux/Goods
 import deleteIcon from '../../images/cart_delete_icon.svg';
 import plusIcon from '../../images/plus.svg';
 import minusIcon from '../../images/minus.svg';
+import { BASE_URL } from '../../config/constants';
 
 function BasketTableProduct({ product }) {
   const dispatch = useDispatch();
 
   return (
     <div className='basket_page__product'>
-      <img src={product.photo} alt={product.name} className='basket_page__product-img' />
-      <h3 className='basket_page__product-title'>{product.name}</h3>
-      <p className='basket_page__product-article'>Артикул {product.vendorCode}</p>
+      <img src={`${BASE_URL}${product?.photo}`} alt={product?.name} className='basket_page__product-img' />
+      <h3 className='basket_page__product-title'>{product?.name}</h3>
+      <p className='basket_page__product-article'>Артикул {product?.vendorCode}</p>
       <div className='basket_page__product-counter'>
         <button
           className='basket_page__product-counter-btn'
