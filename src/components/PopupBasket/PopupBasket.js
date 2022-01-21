@@ -5,6 +5,7 @@ import { BASKET_PAGE } from '../../config/links';
 import Button from '../Button/Button';
 import deleteIcon from '../../images/cart_delete_icon.svg';
 import { removeProduct } from '../../redux/GoodsInBasket/actions';
+import { BASE_URL } from '../../config/constants';
 
 const PopupBasket = ({ isOpened, onClose, goods, goodsTotalSum }) => {
   const visibilityClass = isOpened ? 'popup-basket_visible' : '';
@@ -17,7 +18,7 @@ const PopupBasket = ({ isOpened, onClose, goods, goodsTotalSum }) => {
           {goods.length > 0 ? (
             goods.map(product => (
               <div className='popup-basket__item' key={product.id}>
-                <img className='popup-basket__item-img' src={product.photo} alt={product.name} />
+                <img className='popup-basket__item-img' src={`${BASE_URL}${product.photo}`} alt={product.name} />
                 <h3 className='popup-basket__item-title'>{product.name}</h3>
                 <p className='popup-basket__item-num'>{product.num}</p>
                 <p className='popup-basket__item-price'>{product.price}</p>

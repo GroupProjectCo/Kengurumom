@@ -1,7 +1,10 @@
 .personal {
-  margin: 0;
+  margin: 0 auto;
   padding: 77px 0 120px;
   min-height: 500px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 .personal__title {
@@ -16,6 +19,7 @@
 
 .personal__wrapper {
   margin: 0 auto 40px;
+  width: 100%;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -41,6 +45,23 @@
   color: #513629;
   margin: 0 auto;
   padding: 0;
+}
+
+.personal__link {
+  font-size: 30px;
+  line-height: 1.2;
+  font-weight: 400;
+  color: #513629;
+  text-decoration: none;
+  margin: 0;
+  padding: 5px 0;
+  cursor: pointer;
+  transition: all 0.26s ease-in-out;
+  white-space: nowrap;
+}
+
+.personal__link:hover {
+  color: #dc8962;
 }
 
 @media screen and (max-width: 480px) {

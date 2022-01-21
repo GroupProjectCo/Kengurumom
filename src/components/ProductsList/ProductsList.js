@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import './ProductList.css';
-import PopularItem from '../PopularItem/PopularItem';
+import ProductItem from '../ProductItem/ProductItem';
 
 import { NODATA } from '../../config/texts';
 import {
@@ -68,7 +68,7 @@ function ProductsList({ list, media }) {
         ) : (
           list
             .filter((product, index) => index < itemsCount)
-            .map(product => <PopularItem {...product} key={product.id} component={'catalog'} />)
+            .map(product => <ProductItem {...product} key={product.id} product={product} component={'catalog'} />)
         )}
       </div>
       {list.length > itemsCount && (

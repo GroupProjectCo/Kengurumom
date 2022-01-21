@@ -9,6 +9,10 @@ export const BASKET_PAGE = '/basket';
 export const PRESENT_PAGE = '/gift-certificate';
 export const ORDER_SUCCESS_PAGE = '/order-success';
 
+// footer links
+export const TERMS_OF_USE_PAGE = '/terms-of-use';
+export const OFFER_PAGE = '/offer';
+
 // catalogue links
 export const catalogueLinks = [
   ['Пеленальные коконы', '/catalog/changing-cocoons'],
@@ -20,18 +24,6 @@ export const catalogueLinks = [
   ['Вязаные пледы', '/catalog/knitted-blankets'],
   ['Органайзеры для детских вещей', '/catalog/organizers'],
   ['Подарочный сертификат', '/catalog/gift-certificate'],
-];
-
-export const catalogCategories = [
-  'Пеленальные коконы',
-  'Спальники',
-  'Пелёнки и пледы',
-  'Слюнявчики и грызунки',
-  'Милкснуды',
-  'Вязаные пледы',
-  `Органайзеры для${'\u00A0'}детских${'\u00A0'}вещей`,
-  'Конверты на выписку',
-  `Подарочный${'\u00A0'}сертификат`,
 ];
 
 export const pathTranslate = {
@@ -52,7 +44,3 @@ export const pathTranslate = {
   'gift-certificate': 'Подарочный сертификат',
   'terms-of-use': 'Политика конфиденциальности',
 };
-
-// footer links
-export const TERMS_OF_USE_PAGE = '/terms-of-use';
-export const OFFER_PAGE = '/offer';

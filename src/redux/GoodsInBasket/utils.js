@@ -8,7 +8,7 @@ export function addNewItem(state, item) {
       name: item.name,
       price: item.price,
       vendorCode: item.vendorCode,
-      photo: item.photos[0],
+      photo: item.photos[0].url,
       num: 1,
     },
   ];

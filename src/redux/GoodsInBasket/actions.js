@@ -1,6 +1,6 @@
 import {
   ADD_PPODUCT,
-  REMOVE_PPODUCT,
+  REMOVE_PRODUCT,
   CLEAR_BASKET,
   INCREASE_PRODUCT,
   REDUCE_PRODUCT,
@@ -15,7 +15,7 @@ export function addProduct(product) {
 
 export function removeProduct(product) {
   return {
-    type: REMOVE_PPODUCT,
+    type: REMOVE_PRODUCT,
     payload: product,
   };
 }

@@ -8,7 +8,7 @@ export default function ReviewItem({
       <img src={instaSrc} alt={instaTitle} className="review__item-img"/>
       <figcaption className="review__item-title"><a href={instaLink} className="review__item-insta">@{instaTitle}</a></figcaption>
       <p className="review__item-text">{reviewShort}</p>
-      <a href="" className="review__item-text-full">Читать полностью</a>
+      <a href="https://www.instagram.com/kenguru.stories/" className="review__item-text-full">Читать полностью</a>
     </figure>
   );
 }

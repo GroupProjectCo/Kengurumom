@@ -3,7 +3,7 @@ import {
   CLEAR_BASKET,
   INCREASE_PRODUCT,
   REDUCE_PRODUCT,
-  REMOVE_PPODUCT,
+  REMOVE_PRODUCT,
 } from './types';
 
 import { addNewItem, incrementItem, decrementItem, changeSum, changeCounter } from './utils';
@@ -28,7 +28,7 @@ export const goodsInBasketReducer = (state = initialState, action) => {
         goodsCounterInBasket: changeCounter(INCREASE_PRODUCT, goodsCounterInBasket),
       };
 
-    case REMOVE_PPODUCT:
+    case REMOVE_PRODUCT:
       return {
         ...state,
         goodsInBasket: goodsInBasket.filter(p => id !== p.id),

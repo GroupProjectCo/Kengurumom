@@ -4,7 +4,7 @@
   grid-template-columns: repeat(auto-fit, minmax(268px, 1fr));
   gap: 30px 30px;
   margin-bottom: 50px;
-  min-height: 200px;
+  min-height: 441px;
 }
 
 .products-list__no-data-text {

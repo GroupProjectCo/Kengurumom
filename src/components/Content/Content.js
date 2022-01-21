@@ -20,7 +20,7 @@ import DeliveryPage from '../DeliveryPage/DeliveryPage';
 import NotFoundPage from '../NotFoundPage/NotFoundPage';
 import CatalogPage from '../CatalogPage/CatalogPage';
 import ProductPage from '../ProductPage/ProductPage';
-import { exampleArrProducts } from '../../config/test-db';
+// import { exampleArrProducts } from '../../config/test-db';
 import BreadCrumbs from '../BreadCrumbs/BreadCrumbs';
 import ContactsPage from '../ContactsPage/ContactsPage';
 import OrderSuccessPage from '../OrderSuccessPage/OrderSuccessPage';
@@ -28,7 +28,8 @@ import BasketPage from '../BasketPage/BasketPage';
 import PersonalSewing from '../PersonalSewing/PersonalSewing';
 
 function Content(props) {
-  const { media, onPopupCareOpen } = props;
+  // const { media, onPopupCareOpen, products, product, categories, id } = props;
+  const { media, onPopupCareOpen, products, product, categories } = props;
 
   const { pathname } = useLocation();
   useEffect(() => {
@@ -40,7 +41,7 @@ function Content(props) {
       {pathname.includes(`${CATALOGUE_PAGE}/`) && <BreadCrumbs />}
       <Switch>
         <Route exact path={MAIN_PAGE}>
-          <MainPage media={media} />
+          <MainPage media={media} products={products} />
         </Route>
 
         <Route path={PERSONAL_SEWING_PAGE}>
@@ -72,12 +73,16 @@ function Content(props) {
         </Route>
 
         <Route exact path={CATALOGUE_PAGE}>
-          <CatalogPage media={media} products={exampleArrProducts} />
+          {/* <CatalogPage media={media} products={exampleArrProducts} /> */}
+          <CatalogPage media={media} products={products} categories={categories} />
         </Route>
 
         <Route exact path={`${CATALOGUE_PAGE}/:id`}>
           <ProductPage
-            products={exampleArrProducts}
+            // products={exampleArrProducts}
+            products={products}
+            productItem={product}
+            // sizes={sizes}
             media={media}
             onPopupCareOpen={onPopupCareOpen}
           />
@@ -85,6 +90,7 @@ function Content(props) {
 
         <Route exact path={`${ORDER_SUCCESS_PAGE}/:id`}>
           <OrderSuccessPage />
+          {/* <OrderSuccessPage id={id}/> */}
         </Route>
 
         <Route path='*'>

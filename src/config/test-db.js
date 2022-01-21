@@ -1,9 +1,5 @@
 // временные переменные до появления БД -----------------------------------------
 
-// компонент AdvantageElement
-import handicraft from '../images/advantages/handicraft.svg';
-import reasonableConsumption from '../images/advantages/reasonable-consumption.svg';
-import uniqueCut from '../images/advantages/unique-cut.svg';
 // компонент PhotoElement
 import photoInstOne from '../images/instagram/inst-1.jpg';
 import photoInstTwo from '../images/instagram/inst-2.jpg';
@@ -26,6 +22,18 @@ export const instagramPhotoData = [
 ];
 
 // эта структура будет использоваться для БД
+export const catalogCategories = [
+  'Пеленальные коконы',
+  'Спальники',
+  'Пелёнки и пледы',
+  'Слюнявчики и грызунки',
+  'Милкснуды',
+  'Вязаные пледы',
+  `Органайзеры для${'\u00A0'}детских${'\u00A0'}вещей`,
+  'Конверты на выписку',
+  `Подарочный${'\u00A0'}сертификат`,
+];
+
 export const exampleArrProducts = [
   {
     name: 'Пелёнка-кокон "Авокадо"',
@@ -394,26 +402,5 @@ export const exampleArrProducts = [
     new: true,
     sale: 5,
     category: 'Слюнявчики и грызунки',
-  },
-];
-
-export const advantagesData = [
-  {
-    image: handicraft,
-    alt: 'Ручная работа',
-    title: 'Ручная работа',
-    description: 'Все вещи сделаны вручную с любовью небольшими партиями',
-  },
-  {
-    image: reasonableConsumption,
-    alt: 'Разумное потребление',
-    title: 'Разумное потребление',
-    description: 'Все вещи сделаны вручную с любовью небольшими партиями',
-  },
-  {
-    image: uniqueCut,
-    alt: 'Уникальный крой',
-    title: 'Уникальный крой',
-    description: 'Все вещи сделаны вручную с любовью небольшими партиями',
   },
 ];

@@ -1,18 +1,30 @@
 import './BasketTableProduct.css';
 import { useDispatch } from 'react-redux';
+import { Link } from 'react-router-dom';
 import { removeProduct, increaseProduct, reduceProduct } from '../../redux/GoodsInBasket/actions';
 import deleteIcon from '../../images/cart_delete_icon.svg';
 import plusIcon from '../../images/plus.svg';
 import minusIcon from '../../images/minus.svg';
+import { BASE_URL } from '../../config/constants';
+import { CATALOGUE_PAGE } from '../../config/links';
 
 function BasketTableProduct({ product }) {
   const dispatch = useDispatch();
 
   return (
     <div className='basket_page__product'>
-      <img src={product.photo} alt={product.name} className='basket_page__product-img' />
-      <h3 className='basket_page__product-title'>{product.name}</h3>
-      <p className='basket_page__product-article'>Артикул {product.vendorCode}</p>
+      <Link to={`${CATALOGUE_PAGE}/${product?.id}`}>
+        <img
+          src={`${BASE_URL}${product?.photo}`}
+          alt={product?.name}
+          className='basket_page__product-img'
+        />
+      </Link>
+      <Link to={`${CATALOGUE_PAGE}/${product?.id}`}>
+        <h3 className='basket_page__product-title'>{product?.name}</h3>
+      </Link>
+      <p className='basket_page__product-article'>Артикул {product?.vendorCode}</p>
+      {/* <p className='basket_page__product-size'>Размер {product?.size}</p> */}
       <div className='basket_page__product-counter'>
         <button
           className='basket_page__product-counter-btn'

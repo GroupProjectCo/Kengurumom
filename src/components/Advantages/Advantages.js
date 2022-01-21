@@ -1,7 +1,7 @@
 import { useState, useEffect } from 'react';
 import './Advantages.css';
 import AdvantageElement from '../AdvantageElement/AdvantageElement';
-import { advantagesData } from '../../config/test-db';
+import { advantagesData } from './texts';
 
 function Advantages() {
   const [elements, setElements] = useState([]);

@@ -1,12 +1,12 @@
 /* eslint-disable no-nested-ternary */
 import './CatalogPage.css';
 import { useState, useEffect } from 'react';
-import { catalogCategories } from '../../config/links';
+// import { catalogCategories } from '../../config/test-db';
 import SlickSlider from '../SharedComponents/Slider/SlickSlider';
 import ProductsList from '../ProductsList/ProductsList';
 import CustomSelect from '../CustomSelect/CustomSelect';
 
-function CatalogPage({ products, media }) {
+function CatalogPage({ products, categories, media }) {
   const [category, setCategory] = useState(localStorage.getItem('category') || '');
   const [filteredList, setFilteredList] = useState([]);
   const [order, setOrder] = useState('asc');
@@ -21,21 +21,21 @@ function CatalogPage({ products, media }) {
 
     setFilteredList(
       category
-        ? products.filter(product => product.category === category).sort(orderFunction)
+        ? products.filter(product => product.category.name === category).sort(orderFunction)
         : products.sort(orderFunction),
     );
-  }, []);
+  }, [category, order, products]);
 
   useEffect(() => {
     const orderFunction = (a, b) => (order === 'asc' ? a.price - b.price : b.price - a.price);
 
     setFilteredList(
       category
-        ? products.filter(product => product.category === category).sort(orderFunction)
+        ? products.filter(product => product.category.name === category).sort(orderFunction)
         : products.sort(orderFunction),
     );
     localStorage.setItem('category', category);
-  }, [category, order]);
+  }, [category, order, products]);
 
   const updateWidth = () => {
     setWidth(window.innerWidth);
@@ -85,26 +85,22 @@ function CatalogPage({ products, media }) {
           showArrows={showArrows}
           arrowType='menu'
         >
-          {catalogCategories.map((categoryTitle, i) => (
+          {/* catalogCategories нужно получать от апи */}
+          {categories.map((categoryItem, i) => (
             <button
               key={i}
               className={`catalog__category ${
-                categoryTitle === category && 'catalog__category_active'
+                categoryItem.name === category && 'catalog__category_active'
               }`}
-              onClick={() => setCategory(categoryTitle)}
+              onClick={() => setCategory(categoryItem.name)}
             >
-              {categoryTitle}
+              {categoryItem.name}
             </button>
           ))}
         </SlickSlider>
       </div>
       <div className='catalog__wrapper'>
         <div className='catalog__sort'>
-          {/* <CustomSelect
-            page='category'
-            options={['Цена по убыванию', 'Цена по возрастанию']}
-            startValue='Сортировать:'
-          /> */}
           <CustomSelect
             page='category'
             options={[

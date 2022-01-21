@@ -4,7 +4,7 @@ import loopImg from '../../../../images/product/loop.svg';
 import arrowImg from '../../../../images/product/product-arrow.jpg';
 import PopupProductGallery from './PopupProductGallery/PopupProductGallery';
 
-function ZoomContainer({ slides, currentThumb, media }) {
+function ZoomContainer({ slides, currentThumb, media, onZoomImageClick }) {
   const [currentIndex, setCurrentIndex] = useState(0);
   const [isPopupOpened, setIsPopupOpened] = useState(false);
 
@@ -18,13 +18,13 @@ function ZoomContainer({ slides, currentThumb, media }) {
     if (currentThumb !== null && currentThumb !== currentIndex) {
       setCurrentIndex(currentThumb);
     }
-  }, [currentThumb]);
+  }, [currentThumb, currentIndex]);
 
-  const [activeSlide, setActiveSlide] = useState(slides[0]);
+  const [activeSlide, setActiveSlide] = useState(slides[0]?.url);
 
   const [zoomParams, setZoomParams] = useState({
     backgroundPosition: '0% 0%',
-    backgroundImage: `url(${slides[0]})`,
+    backgroundImage: `url(${slides[0]?.url})`,
   });
 
   const handleRightArrowClick = () => {
@@ -44,14 +44,14 @@ function ZoomContainer({ slides, currentThumb, media }) {
   };
 
   useEffect(() => {
-    setActiveSlide(slides[currentIndex]);
-  }, [currentIndex]);
+    setActiveSlide(slides[currentIndex]?.url);
+  }, [currentIndex, slides]);
 
-  useEffect(() => {
-    setZoomParams({ ...zoomParams, backgroundImage: `url(${activeSlide})` });
-  }, [activeSlide]);
+  // useEffect(() => {
+  //   setZoomParams({ ...zoomParams, backgroundImage: `url(${activeSlide})` });
+  // }, [activeSlide, zoomParams]);
 
-  const handleZoomMove = (evt) => {
+  const handleZoomMove = evt => {
     const { width, height } = evt.target.getBoundingClientRect();
     const x = (evt.nativeEvent.offsetX / width) * 100;
     const y = (evt.nativeEvent.offsetY / height) * 100;
@@ -66,6 +66,10 @@ function ZoomContainer({ slides, currentThumb, media }) {
 
   const closedPopup = () => {
     setIsPopupOpened(false);
+  };
+
+  const handleZoomImageClick = () => {
+    onZoomImageClick(currentThumb);
   };
 
   return (
@@ -96,10 +100,20 @@ function ZoomContainer({ slides, currentThumb, media }) {
             style={zoomParams}
             className='zoom-container__image-wrapper'
           >
-            <img className='zoom-container__image' src={activeSlide} alt='Главное изображение' />
+            <img
+              onClick={handleZoomImageClick}
+              className='zoom-container__image'
+              src={activeSlide}
+              alt='Главное изображение'
+            />
           </figure>
         ) : (
-          <img className='zoom-container__image' src={activeSlide} alt='Главное изображение' />
+          <img
+            onClick={handleZoomImageClick}
+            className='zoom-container__image'
+            src={activeSlide}
+            alt='Главное изображение'
+          />
         )}
       </div>
     </>
