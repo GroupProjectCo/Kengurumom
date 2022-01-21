@@ -33,7 +33,7 @@ function Footer({ media }) {
             <li className="footer__social-item">
               <a
                 className="footer__social-link footer__social-link_icon_instagram"
-                href="https://www.instagram.com/kenguru.mom/" target='_blank' rel='noreferrer'
+                href="https://www.instagram.com/kenguru.stories/" target='_blank' rel='noreferrer'
               ></a>
             </li>
             <li className="footer__social-item">

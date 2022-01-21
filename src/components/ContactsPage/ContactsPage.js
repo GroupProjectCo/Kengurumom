@@ -74,12 +74,12 @@ function ContactsPage() {
           <li className='contacts__item'>
             <h3 className='contacts__item-title'>Instagram</h3>
             <a
-              href='https://www.instagram.com/kenguru.mom/'
+              href='https://www.instagram.com/kenguru.stories/'
               target='_blank'
               rel='noreferrer'
               className='contacts__link'
             >
-              kenguru.mom
+              kenguru.stories
             </a>
           </li>
           <li className='contacts__item'>
