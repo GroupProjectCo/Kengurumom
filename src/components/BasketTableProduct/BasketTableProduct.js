@@ -14,6 +14,7 @@ function BasketTableProduct({ product }) {
       <img src={`${BASE_URL}${product?.photo}`} alt={product?.name} className='basket_page__product-img' />
       <h3 className='basket_page__product-title'>{product?.name}</h3>
       <p className='basket_page__product-article'>Артикул {product?.vendorCode}</p>
+      {/* <p className='basket_page__product-size'>Размер {product?.size}</p> */}
       <div className='basket_page__product-counter'>
         <button
           className='basket_page__product-counter-btn'

@@ -9,6 +9,10 @@ export const BASKET_PAGE = '/basket';
 export const PRESENT_PAGE = '/gift-certificate';
 export const ORDER_SUCCESS_PAGE = '/order-success';
 
+// footer links
+export const TERMS_OF_USE_PAGE = '/terms-of-use';
+export const OFFER_PAGE = '/offer';
+
 // catalogue links
 export const catalogueLinks = [
   ['Пеленальные коконы', '/catalog/changing-cocoons'],
@@ -40,7 +44,3 @@ export const pathTranslate = {
   'gift-certificate': 'Подарочный сертификат',
   'terms-of-use': 'Политика конфиденциальности',
 };
-
-// footer links
-export const TERMS_OF_USE_PAGE = '/terms-of-use';
-export const OFFER_PAGE = '/offer';

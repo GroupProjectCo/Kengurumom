@@ -7,14 +7,8 @@ import ProductsList from '../ProductsList/ProductsList';
 import CustomSelect from '../CustomSelect/CustomSelect';
 
 function CatalogPage({ products, categories, media }) {
-  // eslint-disable-next-line no-console
-  console.log(products);
   const [category, setCategory] = useState(localStorage.getItem('category') || '');
-  // eslint-disable-next-line no-console
-  console.log(category);
   const [filteredList, setFilteredList] = useState([]);
-  // eslint-disable-next-line no-console
-  console.log(filteredList);
   const [order, setOrder] = useState('asc');
   const [width, setWidth] = useState(window.innerWidth);
   const [slides, setSlides] = useState(

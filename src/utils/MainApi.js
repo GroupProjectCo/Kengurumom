@@ -41,17 +41,35 @@ class MainApi {
     }).then(MainApi.parseResponse);
   }
 
-  // sendOrder(order) {
-  //   return fetch(`${this.url}/orders`, {
-  //     method: 'POST',
-  //     headers: this.headers,
-  //     credentials: 'include',
-  //     body: JSON.stringify({
-  //       client: order.name,
-  //       image: BASE_URL + order.photos[0].url,
-  //     }),
-  //   }).then(MainApi.parseResponse);
-  // }
+  sendOrder(order) {
+    return fetch(`${this.url}/orders`, {
+      method: 'POST',
+      headers: this.headers,
+      credentials: 'include',
+      body: JSON.stringify({
+        clientName: order.clientName,
+        clientPhone: order.clientPhone,
+        clientAddress: order.clientAddress,
+        deliveryType: order.deliveryType,
+        goods: order.goods,
+        goodsCounterInBasket: order.goodsCounterInBasket,
+        goodsTotalSum: order.goodsTotalSum,
+      }),
+    }).then(MainApi.parseResponse);
+  }
+
+  sendMessage(order) {
+    return fetch(`${this.url}/calls`, {
+      method: 'POST',
+      headers: this.headers,
+      credentials: 'include',
+      body: JSON.stringify({
+        clientName: order.clientName,
+        clientPhone: order.clientPhone,
+        message: order.message,
+      }),
+    }).then(MainApi.parseResponse);
+  }
 }
 
 const config = {

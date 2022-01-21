@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react';
 import './ProductPage.css';
-import { useLocation } from 'react-router-dom';
+import { useParams } from 'react-router-dom';
 import { useDispatch } from 'react-redux';
 import ProdGallery from './ProdGallery/ProdGallery';
 import CustomSelect from '../CustomSelect/CustomSelect';
@@ -9,17 +9,13 @@ import { openPopupAddInBasket } from '../../redux/PopupAddInBasket/actions';
 import { BASE_URL } from '../../config/constants';
 
 function ProductPage({ products, media, onPopupCareOpen }) {
-  const location = useLocation();
-  const [id, setId] = useState(undefined);
   const [product, setProduct] = useState(null);
 
+  const { id } = useParams();
   useEffect(() => {
-    const productId = 1 * location.pathname.replace(/.+\/(\d+)/, '$1');
-    setProduct(products.find(productData => productData.id === productId));
-    setId(productId);
-  }, [location, id, products]);
+    if (id) setProduct(products.find(productData => productData.id === +id));
+  }, [id, products]);
 
-  // const product = products.find(productData => productData.id === id);
   const dispatch = useDispatch();
 
   const addProductHandler = () => {
@@ -50,7 +46,6 @@ function ProductPage({ products, media, onPopupCareOpen }) {
             </div>
             <div className='product__specification-box'>
               <p className='product__text'>Размер:</p>
-              {/* <CustomSelect options={product.sizes} startValue='Выбрать...' /> */}
               <CustomSelect
                 // startValue='Выбрать...'
                 page='product'
@@ -59,8 +54,7 @@ function ProductPage({ products, media, onPopupCareOpen }) {
                   label: size.age || '',
                   // age: size.age || '',
                 }))}
-                // startValue='Сортировать:'
-                startValue={'min'}
+                startValue='0-3 мес'
                 // cb={handleOrderDirection}
               />
             </div>

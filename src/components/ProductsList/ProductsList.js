@@ -68,7 +68,7 @@ function ProductsList({ list, media }) {
         ) : (
           list
             .filter((product, index) => index < itemsCount)
-            .map(product => <ProductItem {...product} key={product.id} component={'catalog'} />)
+            .map(product => <ProductItem {...product} key={product.id} product={product} component={'catalog'} />)
         )}
       </div>
       {list.length > itemsCount && (

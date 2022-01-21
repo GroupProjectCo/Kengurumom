@@ -42,8 +42,7 @@ const CustomSelect = ({ options, startValue, page, cb }) => {
     <section className={`select ${page && `select_${page}`}`}>
       <div className='select__wrapper'>
         <div
-          className={`select__header ${
-            isSelectActive && 'select__header_active select-arrow-active'
+          className={`select__header ${isSelectActive && 'select__header_active select-arrow-active'
           }`}
           onClick={toggling}
         >
@@ -53,15 +52,13 @@ const CustomSelect = ({ options, startValue, page, cb }) => {
         </div>
         <div className={`select__container ${isOpened && 'select__container_opened'}`}>
           <ul className='select__list'>
-            {options?.map(option => (
+            {options && options.map(option => (
               <li
-                className={`select__list-item ${
-                  selectedOption === option.value && 'select__list-item__active'
-                }`}
-                onClick={onOptionClicked(option.value)}
-                key={option.value}
+                className={`select__list-item ${selectedOption === option?.value && 'select__list-item__active'}`}
+                onClick={onOptionClicked(option?.value)}
+                key={option?.value}
               >
-                <span className='select__item-text'>{option.label}</span>
+                <span className='select__item-text'>{option?.label}</span>
               </li>
             ))}
           </ul>

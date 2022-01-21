@@ -28,7 +28,8 @@ import BasketPage from '../BasketPage/BasketPage';
 import PersonalSewing from '../PersonalSewing/PersonalSewing';
 
 function Content(props) {
-  const { media, onPopupCareOpen, products, product, categories, id } = props;
+  // const { media, onPopupCareOpen, products, product, categories, id } = props;
+  const { media, onPopupCareOpen, products, product, categories } = props;
 
   const { pathname } = useLocation();
   useEffect(() => {
@@ -40,7 +41,7 @@ function Content(props) {
       {pathname.includes(`${CATALOGUE_PAGE}/`) && <BreadCrumbs />}
       <Switch>
         <Route exact path={MAIN_PAGE}>
-          <MainPage media={media} products={products}/>
+          <MainPage media={media} products={products} />
         </Route>
 
         <Route path={PERSONAL_SEWING_PAGE}>
@@ -76,7 +77,7 @@ function Content(props) {
           <CatalogPage media={media} products={products} categories={categories} />
         </Route>
 
-        <Route exact path={`${CATALOGUE_PAGE}/:${id}`}>
+        <Route exact path={`${CATALOGUE_PAGE}/:id`}>
           <ProductPage
             // products={exampleArrProducts}
             products={products}
@@ -87,8 +88,9 @@ function Content(props) {
           />
         </Route>
 
-        <Route exact path={`${ORDER_SUCCESS_PAGE}/:${id}`}>
+        <Route exact path={`${ORDER_SUCCESS_PAGE}/:id`}>
           <OrderSuccessPage />
+          {/* <OrderSuccessPage id={id}/> */}
         </Route>
 
         <Route path='*'>

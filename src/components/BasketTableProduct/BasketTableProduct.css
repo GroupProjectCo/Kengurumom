@@ -1,8 +1,8 @@
 .basket_page__product {
   display: grid;
   grid-column-gap: 20px;
-  grid-template-columns: 2fr 4fr 4fr 2fr 2fr 1fr;
-  grid-template-areas: 'image title article counter price remover';
+  grid-template-columns: 2fr 4fr 3fr 2fr 2fr 2fr 1fr;
+  grid-template-areas: 'image title article size counter price remover';
   align-items: center;
 }
 
@@ -31,6 +31,13 @@
   line-height: 20px;
   color: #513629;
   grid-area: article;
+}
+
+.basket_page__product-size{
+  font-size: 16px;
+  line-height: 20px;
+  color: #513629;
+  grid-area: size;
 }
 
 .basket_page__product-counter {
